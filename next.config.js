@@ -1,7 +1,17 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-}
+const withImages = require("next-images");
 
-module.exports = nextConfig
+module.exports = {
+  ...withImages(),
+  future: {
+    webpack5: true,
+  },
+  images: {
+    disableStaticImages: true,
+  },
+};
+
+module.exports = {
+  env: {
+    URL_API: process.env.URL_API,
+  },
+};
